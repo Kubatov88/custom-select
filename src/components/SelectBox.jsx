@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from './selectBox.module.css';
 
 const SelectBox = ({ options, label, onSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,20 +14,21 @@ const SelectBox = ({ options, label, onSelect }) => {
   };
 
   return (
-    <div className="select-box">
-      <div className={`options-container ${isOpen ? "active" : ""}`}>
+    <div className={styles["select-box"]}>
+      <div className={`${styles["options-container"]} ${isOpen ? styles.active : ""}`}>
         {options.map((option) => (
           <div
             key={option}
-            className="option"
+            className={styles.option}
             onClick={() => handleSelect(option)}
           >
             {option}
           </div>
         ))}
       </div>
-      <div className="selected" onClick={toggleDropdown}>
+      <div className={styles.selected} onClick={toggleDropdown}>
         {label}
+        <div className={styles.arrow}></div>
       </div>
     </div>
   );

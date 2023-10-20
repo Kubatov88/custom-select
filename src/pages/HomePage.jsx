@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SelectBox from '../components/SelectBox';
+import styles from './HomePage.module.css'
 
 const HomePage = () => {
   const options1 = ['Алкольные', 'Не алкольные', 'Сырые'];
@@ -9,7 +10,7 @@ const HomePage = () => {
   const [selectedOption2, setSelectedOption2] = useState(options2[0]);
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       <SelectBox
         options={options1}
         label={selectedOption1}
