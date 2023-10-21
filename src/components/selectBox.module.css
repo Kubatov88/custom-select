@@ -31,7 +31,7 @@
     cursor: pointer;
   }
   
-  .select-box .selected::after {
+  .selected::after {
     content: '';
     background: url('../media/arrow-down.svg');
     background-size: contain;
@@ -48,9 +48,8 @@
     max-height: 240px;
     opacity: 1;
     overflow-y: scroll;
-  }
-  
-  .select-box .options-container.active + .selected::after {
+  } 
+ .selected.active::after {
     transform: rotateX(180deg);
     top: -6px;
   }
